@@ -1,0 +1,94 @@
+Label: sex
+Data Processing
+Starting PCA
+25299
+25299
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.9181818181818182, Confusion Matrix: [[2411  219]
+ [ 195 2235]]
+Gathering Feature Importance
+---------------------------------------------
+Label: bmi
+Data Processing
+Starting PCA
+24534
+24534
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 3.086025820699036, R2: 0.8426255253093103
+Gathering Feature Importance
+---------------------------------------------
+Label: weight
+Data Processing
+Starting PCA
+24574
+24574
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 16.71994326083371, R2: 0.9246998290177658
+Gathering Feature Importance
+---------------------------------------------
+Label: height
+Data Processing
+Starting PCA
+24589
+24589
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 32.305018678704855, R2: 0.615134356365735
+Gathering Feature Importance
+---------------------------------------------
+Label: age
+Data Processing
+Starting PCA
+25299
+25299
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 49.95604180542515, R2: 0.10280717295325403
+Gathering Feature Importance
+---------------------------------------------
+Label: VAT
+Data Processing
+4266049.ply
+Starting PCA
+25298
+25298
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 1.290349699190939, R2: 0.7456206983511929
+Gathering Feature Importance
+---------------------------------------------
+Label: ASAT
+Data Processing
+4266049.ply
+Starting PCA
+25298
+25298
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 2.951868025036463, R2: 0.705360915352329
+Gathering Feature Importance
+---------------------------------------------

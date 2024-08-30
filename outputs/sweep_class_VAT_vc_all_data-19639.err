@@ -1,0 +1,76 @@
+wandb: Starting wandb agent 🕵️
+2023-11-23 11:53:43,906 - wandb.wandb_agent - INFO - Running runs: []
+2023-11-23 11:53:44,251 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-23 11:53:44,253 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: LeakyReLU
+	batchs: 64
+	dropout: 0.0006380190719359818
+	encoder_features: 32
+	layer: gcn
+	lr: 0.00024925563776027963
+	normalization: False
+	num_conv_layers: 2
+	optimizer: adam
+	path: ../../../../../../vol/aimspace/users/wyo/registered_meshes/vertex_clustering/
+	scheduler: ReduceLROnPlateau
+	scheduler_gamma: 9.432346036003424e-06
+	step_size: 0.06347259697452233
+	use_input_encoder: False
+	weight_decay: 0.0006599804037341392
+2023-11-23 11:53:44,269 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=LeakyReLU --batchs=64 --dropout=0.0006380190719359818 --encoder_features=32 --layer=gcn --lr=0.00024925563776027963 --normalization=False --num_conv_layers=2 --optimizer=adam --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/vertex_clustering/ --scheduler=ReduceLROnPlateau --scheduler_gamma=9.432346036003424e-06 --step_size=0.06347259697452233 --use_input_encoder=False --weight_decay=0.0006599804037341392
+2023-11-23 11:53:49,285 - wandb.wandb_agent - INFO - Running runs: ['jmyx7qqc']
+INFO - 2023-11-23 11:54:08,596 - instantiator - Created a temporary directory at /tmp/tmpone7sr9a
+INFO - 2023-11-23 11:54:08,597 - instantiator - Writing /tmp/tmpone7sr9a/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231123_115410-jmyx7qqc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run splendid-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/gv7dechs
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/jmyx7qqc
+2023-11-23 13:35:20,141 - wandb.wandb_agent - INFO - Agent received command: stop
+2023-11-23 13:35:20,142 - wandb.wandb_agent - INFO - Stop: jmyx7qqc
+2023-11-23 13:35:25,148 - wandb.wandb_agent - INFO - Cleaning up finished run: jmyx7qqc
+wandb: Waiting for W&B process to finish... (failed -15). Press Control-C to abort syncing.
+wandb: - 0.027 MB of 0.027 MB uploaded (0.000 MB deduped)wandb: \ 0.027 MB of 0.038 MB uploaded (0.000 MB deduped)wandb: | 0.043 MB of 0.043 MB uploaded (0.000 MB deduped)wandb: 🚀 View run splendid-sweep-1 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/jmyx7qqc
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231123_115410-jmyx7qqc/logs
+2023-11-23 13:35:30,901 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-23 13:35:30,901 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: ReLU
+	batchs: 256
+	dropout: 0.006436916087914836
+	encoder_features: 32
+	layer: sageconv
+	lr: 5.022851456608403e-05
+	normalization: False
+	num_conv_layers: 1
+	optimizer: adam
+	path: ../../../../../../vol/aimspace/users/wyo/registered_meshes/vertex_clustering/
+	scheduler: CosineAnnealingLR
+	scheduler_gamma: 1.2436628726156084e-05
+	step_size: 0.00019374072804901585
+	use_input_encoder: False
+	weight_decay: 0.01732650556462092
+2023-11-23 13:35:30,908 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=ReLU --batchs=256 --dropout=0.006436916087914836 --encoder_features=32 --layer=sageconv --lr=5.022851456608403e-05 --normalization=False --num_conv_layers=1 --optimizer=adam --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/vertex_clustering/ --scheduler=CosineAnnealingLR --scheduler_gamma=1.2436628726156084e-05 --step_size=0.00019374072804901585 --use_input_encoder=False --weight_decay=0.01732650556462092
+2023-11-23 13:35:35,923 - wandb.wandb_agent - INFO - Running runs: ['urks3sty']
+INFO - 2023-11-23 13:35:38,428 - instantiator - Created a temporary directory at /tmp/tmp_k8erjfy
+INFO - 2023-11-23 13:35:38,429 - instantiator - Writing /tmp/tmp_k8erjfy/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231123_133540-urks3sty
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run treasured-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/gv7dechs
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/urks3sty
+slurmstepd-atlas: error: *** JOB 19639 ON atlas CANCELLED AT 2023-11-23T15:56:33 ***

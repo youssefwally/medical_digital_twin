@@ -1,0 +1,319 @@
+#!/bin/sh
+
+#SBATCH --job-name=sweep_infograph_VAT_mlp
+#SBATCH --output=sweep_infograph_VAT_mlp-%A.out  
+#SBATCH --error=sweep_infograph_VAT_mlp-%A.err
+#SBATCH --time=06-00:00:00  # Limit on the total run time (format: days-hours:minutes:seconds)
+#SBATCH --gres=gpu:1  # Number of GPUs if needed
+#SBATCH --cpus-per-task=12  # Number of CPUs (Don't use more than 24 per GPU)
+#SBATCH --mem=24G  # Memory in GB (Don't use more than 48GB per GPU unless you absolutely need it and know what you are doing)
+#SBATCH --partition=master
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=wyo@in.tum.de
+
+# load python module
+#ml python/anaconda3
+
+# activate corresponding environment
+#conda deactivate # If you launch your script from a terminal where your environment is already loaded, conda won't activate the environment. This guards against that. Not necessary if you always run this script from a clean terminal
+#conda activate digital_twin # If this does not work, try 'source activate ptl'
+
+# run the program
+#Do not forget: sbatch job_script.scp
+#Do not forget: sbatch ./digital_twin/scripts/job_script.scp
+#nodes: --nodelist=prometheus,helios,atlas,chameleon
+# organs = ["liver_mesh.ply", "spleen_mesh.ply", "left_kidney_mesh.ply", "right_kidney_mesh.ply", "pancreas_mesh.ply"]
+
+##############################################################################################################################################################################################################
+#Mesh Processing
+##############################################################################################################################################################################################################
+# python vertex_cluster_meshes.py
+# python water_tight_check.py
+# python register_meshes.py --meshes_path=../../../../../../vol/aimspace/users/wyo/organ_decimations_ply/vertex_clustering --transf_save_path=../../../../../../vol/aimspace/users/wyo/registration_transformations/vertex_clustering --reg_save_path=../../../../../../vol/aimspace/users/wyo/registered_meshes/vertex_clustering
+# python unbias_mesh_atlas.py --mesh_atlases_path="../../../../../../vol/aimspace/users/wyo/mesh_atlases/body" --transf_path="../../../../../../vol/aimspace/users/wyo/registration_transformations/body" --save_path="../../../../../../vol/aimspace/users/wyo/unbiased_mesh_atlases/body" --reg_bodies=True
+# python global_autoencoder.py --activation=LeakyReLU --dropout=0.0059573648097931385 --encoder_features=516 --layer=gat --lr=7.418476577120316e-05 --normalization=True --optimizer=adam --use_input_encoder=True --weight_decay=0.002386319694525096 --save=True
+# python create_mesh_atlas.py  --reg_meshes_path="../../../../../../vol/aimspace/users/wyo/registered_meshes/body" --save_path="../../../../../../vol/aimspace/users/wyo/mesh_atlases/body" --reg_bodies=True
+# python smooth_meshes.py
+
+##############################################################################################################################################################################################################
+#GNNs
+##############################################################################################################################################################################################################
+# python ./GraphMAE/graphmae.py --organ=liver_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --organ=spleen_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --organ=pancreas_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --organ=left_kidney_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --organ=right_kidney_mesh.ply --save=True
+
+# python ./GraphMAE/graphmae.py --encoder=gat_pool --decoder=mlp --activation=gelu --attn_drop=8.814326185100362e-05 --drop_edge_rate=0.02587000073208431 --in_drop=1.7953329722168926e-05 --lr=0.00027634148610804405 --mask_rate=0.82214233445639 --num_layers=8 --optimizer=radam --pooling_dim=1000 --replace_rate=0.7424461390357892 --weight_decay=9.85571182040583e-06 --organ=liver_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --encoder=gat_pool --decoder=mlp --activation=gelu --attn_drop=8.814326185100362e-05 --drop_edge_rate=0.02587000073208431 --in_drop=1.7953329722168926e-05 --lr=0.00027634148610804405 --mask_rate=0.82214233445639 --num_layers=8 --optimizer=radam --pooling_dim=1000 --replace_rate=0.7424461390357892 --weight_decay=9.85571182040583e-06 --organ=spleen_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --encoder=gat_pool --decoder=mlp --activation=gelu --attn_drop=8.814326185100362e-05 --drop_edge_rate=0.02587000073208431 --in_drop=1.7953329722168926e-05 --lr=0.00027634148610804405 --mask_rate=0.82214233445639 --num_layers=8 --optimizer=radam --pooling_dim=1000 --replace_rate=0.7424461390357892 --weight_decay=9.85571182040583e-06 --organ=pancreas_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --encoder=gat_pool --decoder=mlp --activation=gelu --attn_drop=8.814326185100362e-05 --drop_edge_rate=0.02587000073208431 --in_drop=1.7953329722168926e-05 --lr=0.00027634148610804405 --mask_rate=0.82214233445639 --num_layers=8 --optimizer=radam --pooling_dim=1000 --replace_rate=0.7424461390357892 --weight_decay=9.85571182040583e-06 --organ=left_kidney_mesh.ply --save=True 
+# python ./GraphMAE/graphmae.py --encoder=gat_pool --decoder=mlp --activation=gelu --attn_drop=8.814326185100362e-05 --drop_edge_rate=0.02587000073208431 --in_drop=1.7953329722168926e-05 --lr=0.00027634148610804405 --mask_rate=0.82214233445639 --num_layers=8 --optimizer=radam --pooling_dim=1000 --replace_rate=0.7424461390357892 --weight_decay=9.85571182040583e-06 --organ=right_kidney_mesh.ply --save=True 
+
+# python ./GraphMAE/graphmae_body.py --save=True 
+
+# python ./infograph/src/train.py
+# python ./infograph_w_discriminator/unsupervised/main.py --label=VAT --mlp=True
+# python ./infograph_w_discriminator/unsupervised/main.py --path=../../../../../../vol/aimspace/users/wyo/smooth_meshes/2000/
+# python ./graph_classifier.py --activation=ELU --batchs=4 --dropout=0.0001 --encoder_features=128 --layer=gcn --lr=0.02 --normalization=False --num_conv_layers=4 --optimizer=adam --use_input_encoder=False --weight_decay=8.884945871388024e-05 --save=True
+# python ./graph_classifier.py
+# python ./graph_classifier.py --layer=sageconv
+
+##############################################################################################################################################################################################################
+#Embeddings and Predictions
+##############################################################################################################################################################################################################
+
+# python ./GraphMAE/embed.py --organ=liver_mesh.ply  --model_path=../models/liver_mesh.ply_smooth_graphmae_gat_gat.pt --meshes_path=../../../../../../vol/aimspace/users/wyo/smooth_meshes/2000/ --save_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/smooth_mae_vertices_prediction
+# python ./GraphMAE/embed.py --organ=pancreas_mesh.ply --model_path=../models/pancreas_mesh.ply_graphmae_no_feat.pt 
+# python ./GraphMAE/embed.py --organ=spleen_mesh.ply --model_path=../models/spleen_mesh.ply_graphmae_no_feat.pt 
+# python ./GraphMAE/embed.py --organ=left_kidney_mesh.ply --model_path=../models/left_kidney_mesh.ply_graphmae_no_feat.pt
+# python ./GraphMAE/embed.py --organ=right_kidney_mesh.ply --model_path=../models/right_kidney_mesh.ply_graphmae_no_feat.pt
+
+# python ./GraphMAE/embed.py --organ=liver_mesh.ply  --model_path=../models/liver_mesh.ply_graphmae_gat_pool_mlp.pt --save_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae
+# python ./GraphMAE/embed.py --organ=pancreas_mesh.ply --model_path=../models/pancreas_mesh.ply_graphmae_gat_pool_mlp.pt --save_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae
+# python ./GraphMAE/embed.py --organ=spleen_mesh.ply --model_path=../models/spleen_mesh.ply_graphmae_gat_pool_mlp.pt --save_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae
+# python ./GraphMAE/embed.py --organ=left_kidney_mesh.ply --model_path=../models/left_kidney_mesh.ply_graphmae_gat_pool_mlp.pt --save_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae
+# python ./GraphMAE/embed.py --organ=right_kidney_mesh.ply --model_path=../models/right_kidney_mesh.ply_graphmae_gat_pool_mlp.pt --save_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae
+
+
+# python ./GraphMAE/embed_body.py --model_path=../models/body_graphmae_vertices.pt
+
+# python ./GraphMAE/graphmae_pred.py --organ=liver_mesh.ply --model_path=../models/right_kidney_mesh.ply_graphmae_no_feat.pt
+# python ./GraphMAE/pred.py
+
+# python ./infograph_w_discriminator/unsupervised/embed.py --organ=liver_mesh.ply
+# python ./infograph_w_discriminator/unsupervised/embed.py --organ=liver_mesh.ply --model_path=../models/liver_mesh.ply_infograph_smooth.pt --meshes_path=../../../../../../vol/aimspace/users/wyo/smooth_meshes/2000/ --save_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/smooth_infograph_vertices_prediction
+
+# python ./graph_classifier.py --activation=LeakyReLU --batchs=64 --dropout=0.001 --encoder_features=516 --layer=gat --lr=0.0001 --normalization=True --num_conv_layers=5 --optimizer=adam --scheduler=StepLR --scheduler_gamma=0.006 --step_size=0.000002 --use_input_encoder=True --weight_decay=0.01 --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/vertex_clustering/
+##############################################################################################################################################################################################################
+#WandB Sweep
+##############################################################################################################################################################################################################
+# wandb sweep --entity yussufwaly --project digital_twin_infograph_w_discriminator sweep_infograh.yaml --name VAT.MLP
+wandb agent yussufwaly/digital_twin_infograph_w_discriminator/4v305ag8
+# wandb agent --count 15 yussufwaly/digital_twin_graphmae/
+
+##############################################################################################################################################################################################################
+#Organs RNDs
+##############################################################################################################################################################################################################
+# python random_forest.py --organ=liver --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+# python random_forest.py --organ=liver --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+# python random_forest.py --organ=liver --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+# python random_forest.py --organ=liver --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+# python random_forest.py --organ=liver --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+# python random_forest.py --organ=liver --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+# python random_forest.py --organ=liver --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+# python random_forest.py --organ=liver --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/infograph_vertices_prediction/ --pca=0
+
+# python random_forest.py --organ=spleen --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=spleen --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=spleen --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=spleen --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=spleen --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=spleen --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=spleen --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=spleen --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+
+# python random_forest.py --organ=pancreas --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=pancreas --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=pancreas --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=pancreas --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=pancreas --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=pancreas --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=pancreas --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=pancreas --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+
+# python random_forest.py --organ=left_kidney --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=left_kidney --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=left_kidney --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=left_kidney --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=left_kidney --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=left_kidney --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=left_kidney --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=left_kidney --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+
+# python random_forest.py --organ=right_kidney --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=right_kidney --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=right_kidney --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=right_kidney --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=right_kidney --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=right_kidney --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=right_kidney --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+# python random_forest.py --organ=right_kidney --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction_sort_pool_gmae/ --pca=0
+
+##############################################################################################################################################################################################################
+#Body RNDs
+##############################################################################################################################################################################################################
+# python random_forest.py --body=True --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=3
+# python random_forest.py --body=True --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=3
+# python random_forest.py --body=True --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=3
+# python random_forest.py --body=True --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=3
+# python random_forest.py --body=True --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=3
+# python random_forest.py --body=True --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=3
+# python random_forest.py --body=True --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=3
+
+
+##############################################################################################################################################################################################################
+#Making Radiomics
+##############################################################################################################################################################################################################
+# python pyradiomics.py
+# python radiomics_processing.py
+
+##############################################################################################################################################################################################################
+#Radiomics Rnds
+##############################################################################################################################################################################################################
+# python random_forest.py --label=organ --radiomics=True
+# python random_forest.py --label=sex --radiomics=True
+# python random_forest.py --label=bmi --radiomics=True
+# python random_forest.py --label=weight --radiomics=True
+# python random_forest.py --label=height --radiomics=True
+# python random_forest.py --label=age --radiomics=True
+# python random_forest.py --label=volume --radiomics=True
+# python random_forest.py --label=VAT --radiomics=True
+# python random_forest.py --label=ASAT --radiomics=True
+
+# python random_forest.py --body=True --radiomics=True --label=sex 
+# python random_forest.py --body=True --radiomics=True --label=bmi
+# python random_forest.py --body=True --radiomics=True --label=weight
+# python random_forest.py --body=True --radiomics=True --label=height
+# python random_forest.py --body=True --radiomics=True --label=age
+# python random_forest.py --body=True --radiomics=True --label=VAT
+# python random_forest.py --body=True --radiomics=True --label=ASAT
+
+##############################################################################################################################################################################################################
+#Combining Latent Spaces
+##############################################################################################################################################################################################################
+# # python combine_latent_spaces.py --pca=0
+# # python combine_latent_spaces.py --body=True --pca=0
+# # python combine_latent_spaces.py --pca=7
+# # python combine_latent_spaces.py --body=True --pca=3
+# python combine_latent_spaces.py --organ_radiomics=True --body_radiomics=True
+# python combine_latent_spaces.py --body_radiomics=True
+# python combine_latent_spaces.py --organ_radiomics=True
+
+##############################################################################################################################################################################################################
+#Combining Latent Spaces RNDs
+##############################################################################################################################################################################################################
+# python random_forest.py --label=sex --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python random_forest.py --label=bmi --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python random_forest.py --label=height --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python random_forest.py --label=weight --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python random_forest.py --label=age --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python random_forest.py --label=volume --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python random_forest.py --label=VAT --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python random_forest.py --label=ASAT --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+
+# python random_forest.py --label=sex --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python random_forest.py --label=bmi --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python random_forest.py --label=height --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python random_forest.py --label=weight --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python random_forest.py --label=age --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python random_forest.py --label=volume --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python random_forest.py --label=VAT --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python random_forest.py --label=ASAT --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+
+# python random_forest.py --label=sex --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/ 
+# python random_forest.py --label=bmi --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/ 
+# python random_forest.py --label=height --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/
+# python random_forest.py --label=weight --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/
+# python random_forest.py --label=age --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/ 
+# python random_forest.py --label=volume --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/
+# python random_forest.py --label=VAT --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/
+# python random_forest.py --label=ASAT --combine_all=True --radiomics=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/all_and_organ_radiomics/
+
+##############################################################################################################################################################################################################
+#Organs MLP
+##############################################################################################################################################################################################################
+# python mlp.py --organ=liver --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=liver --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=liver --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=liver --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=liver --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=liver --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=liver --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=liver --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+
+# python mlp.py --organ=spleen --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=spleen --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=spleen --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=spleen --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=spleen --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=spleen --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=spleen --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=spleen --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+
+# python mlp.py --organ=pancreas --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=pancreas --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=pancreas --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=pancreas --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=pancreas --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=pancreas --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=pancreas --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=pancreas --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+
+# python mlp.py --organ=left_kidney --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=left_kidney --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=left_kidney --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=left_kidney --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=left_kidney --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=left_kidney --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=left_kidney --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=left_kidney --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+
+# python mlp.py --organ=right_kidney --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=right_kidney --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=right_kidney --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=right_kidney --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=right_kidney --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=right_kidney --label=volume --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=right_kidney --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+# python mlp.py --organ=right_kidney --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/vertices_prediction/ --pca=64
+
+##############################################################################################################################################################################################################
+#Body MLP
+##############################################################################################################################################################################################################
+# python mlp.py --body=True --label=sex --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=64
+# python mlp.py --body=True --label=bmi --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=64
+# python mlp.py --body=True --label=weight --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=64
+# python mlp.py --body=True --label=height --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=64
+# python mlp.py --body=True --label=age --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=64
+# python mlp.py --body=True --label=VAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=64
+# python mlp.py --body=True --label=ASAT --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/body_vertices_prediction/ --pca=64
+
+##############################################################################################################################################################################################################
+#Combining Latent Spaces MLP
+##############################################################################################################################################################################################################
+# python mlp.py --label=sex --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python mlp.py --label=bmi --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python mlp.py --label=height --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python mlp.py --label=weight --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python mlp.py --label=age --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python mlp.py --label=volume --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python mlp.py --label=VAT --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+# python mlp.py --label=ASAT --combine_organs=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs/ --pca=32
+
+# python mlp.py --label=sex --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python mlp.py --label=bmi --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python mlp.py --label=height --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python mlp.py --label=weight --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python mlp.py --label=age --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python mlp.py --label=volume --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python mlp.py --label=VAT --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+# python mlp.py --label=ASAT --combine_all=True --vertices_path=../../../../../../vol/aimspace/users/wyo/latent_spaces/combined/organs_and_body/ --pca=32
+
+##############################################################################################################################################################################################################
+#Radiomics MLP
+##############################################################################################################################################################################################################
+# python mlp.py --label=bmi --radiomics=True
+# python mlp.py --label=weight --radiomics=True
+# python mlp.py --label=height --radiomics=True
+# python mlp.py --label=age --radiomics=True
+# python mlp.py --label=volume --radiomics=True
+# python mlp.py --label=VAT --radiomics=True
+# python mlp.py --label=ASAT --radiomics=True
+
+# python mlp.py --body=True --radiomics=True --label=bmi
+# python mlp.py --body=True --radiomics=True --label=weight
+# python mlp.py --body=True --radiomics=True --label=height
+# python mlp.py --body=True --radiomics=True --label=age
+# python mlp.py --body=True --radiomics=True --label=VAT
+# python mlp.py --body=True --radiomics=True --label=ASAT

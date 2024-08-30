@@ -1,0 +1,67 @@
+program: ./graph_classifier.py
+method: bayes
+metric:
+  goal: minimize
+  name: train_loss
+parameters:
+  path:
+    values:
+     - ../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+    distribution: categorical
+  layer:
+    values: ['gat', 'gcn', 'sageconv']
+  use_input_encoder:
+    values: [True, False]
+  normalization:
+    values: [True, False]
+  encoder_features:
+    values: [1, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+  num_conv_layers:
+    max: 7
+    min: 1
+    distribution: int_uniform
+  batchs:
+    values: [2, 4, 8, 16, 32]
+  optimizer:
+    values:
+      - adam
+      - sgd
+    distribution: categorical
+  scheduler:
+    values:
+      - StepLR
+      - ReduceLROnPlateau
+      - CosineAnnealingLR
+    distribution: categorical
+  activation:
+    values: ['ReLU', 'ELU', 'LeakyReLU', 'Tanh']
+  lr:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  dropout:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  weight_decay:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  step_size:
+    max: 50
+    min: 1
+    distribution: int_uniform
+  scheduler_gamma:
+    values: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+  # alpha:
+  #   max: 5.0
+  #   min: 0.0
+  #   distribution: uniform
+  # gamma:
+  #   max: 5.0
+  #   min: 0.0
+  #   distribution: uniform
+  # threshold:
+  #   max: 1.0
+  #   min: 0.0
+  #   distribution: uniform

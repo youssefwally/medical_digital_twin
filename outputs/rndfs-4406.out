@@ -1,0 +1,29 @@
+organ: pancreas, dir: 4244472
+30378
+{0: 15726, 1: 14652}
+Accuracy: 0.7868663594470046, Confusion Matrix: [[2515  619]
+ [ 676 2266]]
+organ: spleen, dir: 2572248
+organ: spleen, dir: 2967729
+organ: spleen, dir: 3627598
+organ: spleen, dir: 3088944
+organ: spleen, dir: 5485143
+organ: spleen, dir: 2533798
+organ: spleen, dir: 1178373
+30372
+{0: 15725, 1: 14647}
+Accuracy: 0.7489711934156379, Confusion Matrix: [[2452  705]
+ [ 820 2098]]
+organ: left_kidney, dir: 4079512
+organ: left_kidney, dir: 2962906
+organ: left_kidney, dir: 2863396
+30376
+{0: 15725, 1: 14651}
+Accuracy: 0.7970704410796576, Confusion Matrix: [[2577  530]
+ [ 703 2266]]
+organ: right_kidney, dir: 1802206
+organ: right_kidney, dir: 1695474
+30377
+{0: 15726, 1: 14651}
+Accuracy: 0.78275181040158, Confusion Matrix: [[2568  614]
+ [ 706 2188]]

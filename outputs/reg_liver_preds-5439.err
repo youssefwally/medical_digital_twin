@@ -1,0 +1,2 @@
+./GraphMAE/embed.py:93: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525552411/work/torch/csrc/utils/tensor_new.cpp:230.)
+  dgl_graph.ndata['feat'] = torch.tensor(points, dtype=torch.float32)

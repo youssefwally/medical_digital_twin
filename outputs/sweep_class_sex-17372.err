@@ -1,0 +1,278 @@
+wandb: Starting wandb agent 🕵️
+2023-11-10 14:30:44,814 - wandb.wandb_agent - INFO - Running runs: []
+2023-11-10 14:30:45,193 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-10 14:30:45,193 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: LeakyReLU
+	batchs: 256
+	dropout: 1.2440014910970362e-06
+	encoder_features: 64
+	layer: sageconv
+	lr: 1.301139292477244e-06
+	normalization: True
+	num_conv_layers: 4
+	optimizer: adam
+	scheduler: CosineAnnealingLR
+	scheduler_gamma: 1.20723608110819e-05
+	step_size: 0.0010423687099630425
+	use_input_encoder: True
+	weight_decay: 5.605649157836476e-05
+2023-11-10 14:30:45,354 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=LeakyReLU --batchs=256 --dropout=1.2440014910970362e-06 --encoder_features=64 --layer=sageconv --lr=1.301139292477244e-06 --normalization=True --num_conv_layers=4 --optimizer=adam --scheduler=CosineAnnealingLR --scheduler_gamma=1.20723608110819e-05 --step_size=0.0010423687099630425 --use_input_encoder=True --weight_decay=5.605649157836476e-05
+2023-11-10 14:30:50,371 - wandb.wandb_agent - INFO - Running runs: ['w10ceoy5']
+INFO - 2023-11-10 14:30:55,788 - instantiator - Created a temporary directory at /tmp/tmp05liakau
+INFO - 2023-11-10 14:30:55,788 - instantiator - Writing /tmp/tmp05liakau/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231110_143056-w10ceoy5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run likely-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/b8h75xyo
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/w10ceoy5
+Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 239, in __lift__
+    return src.index_select(self.node_dim, index)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.42 GiB (GPU 0; 44.43 GiB total capacity; 24.80 GiB already allocated; 2.79 GiB free; 40.56 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./graph_classifier.py", line 613, in <module>
+    val_loss = calculate_val_loss(model, valid_loader, wandb.config.alpha, wandb.config.gamma, wandb.config.threshold, loss_fn)
+  File "./graph_classifier.py", line 387, in calculate_val_loss
+    out = model(data)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "./graph_classifier.py", line 274, in forward
+    x = layer(x, edge_index)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/sage_conv.py", line 131, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 429, in propagate
+    coll_dict = self.__collect__(self.__user_args__, edge_index,
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 301, in __collect__
+    data = self.__lift__(data, edge_index, dim)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 242, in __lift__
+    raise ValueError(
+ValueError: Encountered a CUDA error. Please ensure that all indices in 'edge_index' point to valid indices in the interval [0, 278236) in your node feature matrix and try again.
+2023-11-10 14:41:19,476 - wandb.wandb_agent - INFO - Cleaning up finished run: w10ceoy5
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.027 MB of 0.027 MB uploaded (0.000 MB deduped)wandb: \ 0.027 MB of 0.040 MB uploaded (0.000 MB deduped)wandb: | 0.046 MB of 0.046 MB uploaded (0.000 MB deduped)wandb: 🚀 View run likely-sweep-1 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/w10ceoy5
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231110_143056-w10ceoy5/logs
+2023-11-10 14:41:25,111 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-10 14:41:25,111 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: Tanh
+	batchs: 256
+	dropout: 0.0477806881674747
+	encoder_features: 128
+	layer: gat
+	lr: 6.822880491078195e-06
+	normalization: False
+	num_conv_layers: 1
+	optimizer: sgd
+	scheduler: CosineAnnealingLR
+	scheduler_gamma: 0.0035539479626711013
+	step_size: 0.0016316699944771132
+	use_input_encoder: True
+	weight_decay: 1.4203671390365718e-05
+2023-11-10 14:41:25,119 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=Tanh --batchs=256 --dropout=0.0477806881674747 --encoder_features=128 --layer=gat --lr=6.822880491078195e-06 --normalization=False --num_conv_layers=1 --optimizer=sgd --scheduler=CosineAnnealingLR --scheduler_gamma=0.0035539479626711013 --step_size=0.0016316699944771132 --use_input_encoder=True --weight_decay=1.4203671390365718e-05
+2023-11-10 14:41:30,134 - wandb.wandb_agent - INFO - Running runs: ['q02g6dgz']
+INFO - 2023-11-10 14:41:34,608 - instantiator - Created a temporary directory at /tmp/tmphogna79w
+INFO - 2023-11-10 14:41:34,609 - instantiator - Writing /tmp/tmphogna79w/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231110_144138-q02g6dgz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run kind-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/b8h75xyo
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/q02g6dgz
+wandb: Waiting for W&B process to finish... (success).
+wandb: 
+wandb: Run history:
+wandb:        accuracy ▅▃▅▁█▄▅▄▂▃▁▃▆▄▅▅▇▆▅▇▃▄▅▆▆▁▆▃▄▂
+wandb:           epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:        f1_score ▅▃▅▁█▄▆▄▂▃▁▃▆▄▅▆▇▆▅▇▃▄▅▆▅▁▆▃▄▂
+wandb:      train_loss █▇▇▇▇▇▆▅▆▅▆▃▆▅▃▄▄▃▅▄▃▂▃▂▃▂▂▁▁▁
+wandb: validation_loss █▄▄▄▆▇▃▇▅▆▆▄▄▄▅▅▄▆▄▃▃▂▁▃▃▅▃▁▂▅
+wandb: 
+wandb: Run summary:
+wandb:        accuracy 0.48851
+wandb:           epoch 30
+wandb:        f1_score 0.65529
+wandb:      train_loss 0.69347
+wandb: validation_loss 0.69349
+wandb: 
+wandb: 🚀 View run kind-sweep-2 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/q02g6dgz
+wandb: Synced 6 W&B file(s), 360 media file(s), 343 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231110_144138-q02g6dgz/logs
+2023-11-10 15:07:17,438 - wandb.wandb_agent - INFO - Cleaning up finished run: q02g6dgz
+2023-11-10 15:07:18,017 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-10 15:07:18,018 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: Tanh
+	batchs: 256
+	dropout: 0.005302651689560007
+	encoder_features: 32
+	layer: sageconv
+	lr: 1.0354053308019724e-06
+	normalization: True
+	num_conv_layers: 1
+	optimizer: adam
+	scheduler: CosineAnnealingLR
+	scheduler_gamma: 8.130952785120495e-06
+	step_size: 9.196695443387264e-05
+	use_input_encoder: True
+	weight_decay: 1.44695038074406e-05
+2023-11-10 15:07:18,026 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=Tanh --batchs=256 --dropout=0.005302651689560007 --encoder_features=32 --layer=sageconv --lr=1.0354053308019724e-06 --normalization=True --num_conv_layers=1 --optimizer=adam --scheduler=CosineAnnealingLR --scheduler_gamma=8.130952785120495e-06 --step_size=9.196695443387264e-05 --use_input_encoder=True --weight_decay=1.44695038074406e-05
+2023-11-10 15:07:23,046 - wandb.wandb_agent - INFO - Running runs: ['jyvah4yf']
+INFO - 2023-11-10 15:07:27,874 - instantiator - Created a temporary directory at /tmp/tmputn0w5wr
+INFO - 2023-11-10 15:07:27,875 - instantiator - Writing /tmp/tmputn0w5wr/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231110_150731-jyvah4yf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resilient-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/b8h75xyo
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/jyvah4yf
+wandb: Waiting for W&B process to finish... (success).
+wandb: 
+wandb: Run history:
+wandb:        accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▃▃▃▄▅▇▅▇▇▇███▇▇
+wandb:           epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:        f1_score ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▄▆▄▆▅▇█▇█▇▆
+wandb:      train_loss ██████████████▇▇▇▆▆▅▄▄▃▂▂▂▁▁▁▁
+wandb: validation_loss ████████████▇▇▇▆▆▅▄▄▃▃▂▂▂▁▁▁▂▂
+wandb: 
+wandb: Run summary:
+wandb:        accuracy 0.75969
+wandb:           epoch 30
+wandb:        f1_score 0.77547
+wandb:      train_loss 0.09088
+wandb: validation_loss 0.39958
+wandb: 
+wandb: 🚀 View run resilient-sweep-3 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/jyvah4yf
+wandb: Synced 6 W&B file(s), 360 media file(s), 357 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231110_150731-jyvah4yf/logs
+2023-11-10 15:33:05,325 - wandb.wandb_agent - INFO - Cleaning up finished run: jyvah4yf
+2023-11-10 15:33:06,089 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-10 15:33:06,090 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: LeakyReLU
+	batchs: 256
+	dropout: 0.0033905915651068074
+	encoder_features: 16
+	layer: gcn
+	lr: 0.0020734528641162325
+	normalization: True
+	num_conv_layers: 1
+	optimizer: adam
+	scheduler: ReduceLROnPlateau
+	scheduler_gamma: 0.0006338584060044539
+	step_size: 0.0001994195173627692
+	use_input_encoder: True
+	weight_decay: 0.09349942108892006
+2023-11-10 15:33:06,098 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=LeakyReLU --batchs=256 --dropout=0.0033905915651068074 --encoder_features=16 --layer=gcn --lr=0.0020734528641162325 --normalization=True --num_conv_layers=1 --optimizer=adam --scheduler=ReduceLROnPlateau --scheduler_gamma=0.0006338584060044539 --step_size=0.0001994195173627692 --use_input_encoder=True --weight_decay=0.09349942108892006
+2023-11-10 15:33:11,114 - wandb.wandb_agent - INFO - Running runs: ['ugjqlbu3']
+INFO - 2023-11-10 15:33:14,764 - instantiator - Created a temporary directory at /tmp/tmpf_p6mxp8
+INFO - 2023-11-10 15:33:14,764 - instantiator - Writing /tmp/tmpf_p6mxp8/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231110_153317-ugjqlbu3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run elated-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/b8h75xyo
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/ugjqlbu3
+wandb: Waiting for W&B process to finish... (success).
+wandb: 
+wandb: Run history:
+wandb:        accuracy ▄▄▅▂▅▅▇▄▄▂█▂▂▃▇▂▂▃▄▂▄▅▅▁▂▇▅▆▅▂
+wandb:           epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:        f1_score ▃▅▅▂▅▆▇▄▅▁█▂▂▃█▂▂▂▃▃▄▅▅▁▂▇▆▆▆▁
+wandb:      train_loss █▁▃▃▃▁▆▃▄▁▃▄▂▂▂▁▂▁▁▂▂▂▂▂▂▂▂▂▂▂
+wandb: validation_loss ▄▁▄▄▄▅▃▄▆▄▅▃▆▇▅▆▅▅▃▆▄█▅▄▃▄▆▅▅▆
+wandb: 
+wandb: Run summary:
+wandb:        accuracy 0.50736
+wandb:           epoch 30
+wandb:        f1_score 0.67229
+wandb:      train_loss 0.69251
+wandb: validation_loss 0.69299
+wandb: 
+wandb: 🚀 View run elated-sweep-3 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/ugjqlbu3
+wandb: Synced 6 W&B file(s), 360 media file(s), 350 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231110_153317-ugjqlbu3/logs
+2023-11-10 15:58:43,540 - wandb.wandb_agent - INFO - Cleaning up finished run: ugjqlbu3
+2023-11-10 15:58:44,256 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-10 15:58:44,256 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: LeakyReLU
+	batchs: 64
+	dropout: 3.745642604350716e-06
+	encoder_features: 516
+	layer: sageconv
+	lr: 2.4033746957703147e-05
+	normalization: True
+	num_conv_layers: 2
+	optimizer: adam
+	scheduler: StepLR
+	scheduler_gamma: 0.006397588560715656
+	step_size: 2.192768293215538e-06
+	use_input_encoder: False
+	weight_decay: 0.016072488358138026
+2023-11-10 15:58:44,264 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=LeakyReLU --batchs=64 --dropout=3.745642604350716e-06 --encoder_features=516 --layer=sageconv --lr=2.4033746957703147e-05 --normalization=True --num_conv_layers=2 --optimizer=adam --scheduler=StepLR --scheduler_gamma=0.006397588560715656 --step_size=2.192768293215538e-06 --use_input_encoder=False --weight_decay=0.016072488358138026
+2023-11-10 15:58:49,278 - wandb.wandb_agent - INFO - Running runs: ['jb3f34dw']
+INFO - 2023-11-10 15:58:53,087 - instantiator - Created a temporary directory at /tmp/tmpjdw6gpf2
+INFO - 2023-11-10 15:58:53,087 - instantiator - Writing /tmp/tmpjdw6gpf2/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231110_155855-jb3f34dw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run happy-sweep-4
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/b8h75xyo
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/jb3f34dw
+wandb: Waiting for W&B process to finish... (success).
+wandb: Network error (ReadTimeout), entering retry loop.
+wandb: 
+wandb: Run history:
+wandb:        accuracy ██████████▁▄███████▄█▁▄▄███▄▄▁
+wandb:           epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:        f1_score ████▇█████▁▄███████▄█▁▄▅███▄▄▁
+wandb:      train_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: validation_loss ▄▁▂▁▁█▂▁▆▁▅▂▂▂▂▅▃▁▁▁▁▄▁▂▁▁▁▁▃▁
+wandb: 
+wandb: Run summary:
+wandb:        accuracy 0.99513
+wandb:           epoch 30
+wandb:        f1_score 0.99513
+wandb:      train_loss 0.03056
+wandb: validation_loss 0.03477
+wandb: 
+wandb: 🚀 View run happy-sweep-4 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/jb3f34dw
+wandb: Synced 6 W&B file(s), 1380 media file(s), 1325 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231110_155855-jb3f34dw/logs
+2023-11-10 17:10:43,299 - wandb.wandb_agent - INFO - Cleaning up finished run: jb3f34dw
+2023-11-10 17:10:43,572 - wandb.wandb_agent - INFO - Agent received command: exit
+2023-11-10 17:10:43,572 - wandb.wandb_agent - INFO - Received exit command. Killing runs and quitting.
+wandb: Terminating and syncing runs. Press ctrl-c to kill.

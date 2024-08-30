@@ -1,0 +1,200 @@
+body
+
+Organ: liver, Label: sex
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.001, 'hidden_layer_sizes': (10, 10, 10), 'activation': 'relu'}
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.6957831325301205, Confusion Matrix: [[102  60]
+ [ 41 129]]
+---------------------------------------------
+Organ: liver, Label: bmi
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.0001, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'relu'}
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 7.408826643135451, R2: 0.6136332904376303
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 10, 'activation': 'relu'}
+Getting Predictions
+weight
+Calculating Performances
+MSE: 46.27558707803551, R2: 0.8043046300656859
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.01, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'relu'}
+Getting Predictions
+height
+Calculating Performances
+MSE: 64.48040247336904, R2: 0.2860822690647232
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': (10, 10, 10), 'activation': 'tanh'}
+Getting Predictions
+age
+Calculating Performances
+MSE: 61.17853295879082, R2: 0.0013985904116687875
+---------------------------------------------
+Organ: liver, Label: VAT
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.001, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'relu'}
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 2.632369035012324, R2: 0.5462816261814123
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.001, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'relu'}
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 7.137178213992125, R2: 0.2606962364668024
+---------------------------------------------
+Organ: liver, Label: bmi
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.001, 'hidden_layer_sizes': (6, 5), 'activation': 'relu'}
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 465.95803454333304, R2: -24.6281993409694
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.001, 'hidden_layer_sizes': (10, 10, 10), 'activation': 'relu'}
+Getting Predictions
+height
+Calculating Performances
+MSE: 44.10696703258036, R2: 0.5158273483938216
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.001, 'hidden_layer_sizes': 10, 'activation': 'relu'}
+Getting Predictions
+weight
+Calculating Performances
+MSE: 86.6396354964953, R2: 0.6069035678906654
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.0001, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'relu'}
+Getting Predictions
+age
+Calculating Performances
+MSE: 58.60837398376751, R2: 0.049546267534991695
+---------------------------------------------
+Organ: liver, Label: volume
+Data Processing
+Starting PCA
+115
+115
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.001, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'relu'}
+Getting Predictions
+liver
+Calculating Performances
+MSE: 0.0228124472605094, R2: 0.24580250046618135
+---------------------------------------------
+Organ: liver, Label: VAT
+Data Processing
+Starting PCA
+1660
+1660
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.0001, 'hidden_layer_sizes': 10, 'activation': 'relu'}
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 3.0787719017325523, R2: 0.4978686773652471
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.0001, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'relu'}
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 7.011223556624663, R2: 0.27374323479504137
+---------------------------------------------

@@ -1,0 +1,87 @@
+Organ: liver, Label: sex
+Data Processing
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.6235093696763203, Confusion Matrix: [[187 108]
+ [113 179]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: bmi
+Data Processing
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 14.975975304614046, R2: 0.17630504899816146
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 161.53594817725508, R2: 0.26708827291354453
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 82.3719664497993, R2: 0.0957833626475656
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 61.78466198097889, R2: -0.00196368875844688
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: volume
+Data Processing
+Organ: liver, Label: VAT
+Data Processing
+1660
+1660
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 4.788663036592357, R2: 0.2189945273753019
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+1659
+1659
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 9.052922550060416, R2: 0.06225408535923049
+Gathering Feature Importance
+---------------------------------------------

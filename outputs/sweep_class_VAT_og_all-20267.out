@@ -1,0 +1,148 @@
+GNN(
+  (fc): ModuleList(
+    (0): Linear(256, 128, bias=True)
+    (1): Linear(128, 64, bias=True)
+  )
+  (input_encoder): Sequential(
+    (0): Linear(in_features=3, out_features=4, bias=True)
+    (1): Identity()
+  )
+  (layers): ModuleList(
+    (0): SAGEConv(4, 512, aggr=mean)
+    (1): Tanh()
+    (2): SAGEConv(512, 256, aggr=mean)
+    (3): Tanh()
+    (4): SAGEConv(256, 256, aggr=mean)
+    (5): Tanh()
+  )
+  (pred_layer): Linear(64, 1, bias=True)
+)
+../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+loading IDs
+loading Features
+Filtering IDs
+Loading Data
+Data Already Done!
+Data Already Done!
+Data Already Done!
+Building Model
+Starting Training
+GNN(
+  (fc): ModuleList()
+  (input_encoder): Sequential(
+    (0): Linear(in_features=3, out_features=4, bias=True)
+    (1): Identity()
+  )
+  (layers): ModuleList(
+    (0): GCNConv(4, 512)
+    (1): Tanh()
+    (2): GCNConv(512, 256)
+    (3): Tanh()
+    (4): GCNConv(256, 256)
+    (5): Tanh()
+    (6): GCNConv(256, 128)
+    (7): Tanh()
+    (8): GCNConv(128, 64)
+    (9): Tanh()
+  )
+  (pred_layer): Linear(64, 1, bias=True)
+)
+../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+loading IDs
+loading Features
+Filtering IDs
+Loading Data
+Data Already Done!
+Data Already Done!
+Data Already Done!
+Building Model
+Starting Training
+GNN(
+  (fc): ModuleList(
+    (0): Linear(256, 128, bias=True)
+    (1): Linear(128, 64, bias=True)
+  )
+  (input_encoder): Sequential(
+    (0): Linear(in_features=3, out_features=256, bias=True)
+    (1): Identity()
+  )
+  (layers): ModuleList(
+    (0): SAGEConv(256, 512, aggr=mean)
+    (1): ELU(alpha=1.0)
+    (2): SAGEConv(512, 256, aggr=mean)
+    (3): ELU(alpha=1.0)
+    (4): SAGEConv(256, 256, aggr=mean)
+    (5): ELU(alpha=1.0)
+  )
+  (pred_layer): Linear(64, 1, bias=True)
+)
+../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+loading IDs
+loading Features
+Filtering IDs
+Loading Data
+Data Already Done!
+Data Already Done!
+Data Already Done!
+Building Model
+Starting Training
+GNN(
+  (fc): ModuleList(
+    (0): Linear(128, 64, bias=True)
+  )
+  (layers): ModuleList(
+    (0): GCNConv(3, 512)
+    (1): ReLU()
+    (2): LayerNorm(512, mode=graph)
+    (3): GCNConv(512, 256)
+    (4): ReLU()
+    (5): LayerNorm(256, mode=graph)
+    (6): GCNConv(256, 256)
+    (7): ReLU()
+    (8): LayerNorm(256, mode=graph)
+    (9): GCNConv(256, 128)
+    (10): ReLU()
+    (11): LayerNorm(128, mode=graph)
+  )
+  (pred_layer): Linear(64, 1, bias=True)
+)
+../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+loading IDs
+loading Features
+Filtering IDs
+Loading Data
+Data Already Done!
+Data Already Done!
+Data Already Done!
+Building Model
+Starting Training
+GNN(
+  (fc): ModuleList(
+    (0): Linear(256, 256, bias=True)
+    (1): Linear(256, 128, bias=True)
+    (2): Linear(128, 64, bias=True)
+  )
+  (input_encoder): Sequential(
+    (0): Linear(in_features=3, out_features=516, bias=True)
+    (1): Identity()
+  )
+  (layers): ModuleList(
+    (0): SAGEConv(516, 512, aggr=mean)
+    (1): ELU(alpha=1.0)
+    (2): LayerNorm(512, mode=graph)
+    (3): SAGEConv(512, 256, aggr=mean)
+    (4): ELU(alpha=1.0)
+    (5): LayerNorm(256, mode=graph)
+  )
+  (pred_layer): Linear(64, 1, bias=True)
+)
+../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+loading IDs
+loading Features
+Filtering IDs
+Loading Data
+Data Already Done!
+Data Already Done!
+Data Already Done!
+Building Model
+Starting Training

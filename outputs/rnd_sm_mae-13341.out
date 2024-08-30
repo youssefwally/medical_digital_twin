@@ -1,0 +1,94 @@
+Organ: liver, Label: sex
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.9914821124361158, Confusion Matrix: [[293   2]
+ [  3 289]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: bmi
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 11.004003541499792, R2: 0.39476782155569135
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 91.09305449362945, R2: 0.5866977682190799
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 42.08344656276757, R2: 0.5380400131350844
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+Starting PCA
+2935
+2935
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 54.79820313319156, R2: 0.11133592078935917
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: volume
+Data Processing
+Organ: liver, Label: VAT
+Data Processing
+Starting PCA
+1660
+1660
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 2.8723187063955002, R2: 0.5315400954974014
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+Starting PCA
+1659
+1659
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 6.79983274216846, R2: 0.29564012737892476
+Gathering Feature Importance
+---------------------------------------------

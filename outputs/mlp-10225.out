@@ -1,0 +1,169 @@
+Organ: liver, Label: bmi
+Data Processing
+229
+229
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 10, 'activation': 'tanh'}
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 14.90310572527172, R2: -0.12721352755700388
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+229
+229
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 10, 'activation': 'tanh'}
+Getting Predictions
+weight
+Calculating Performances
+MSE: 176.7249397163746, R2: -0.03701649276434105
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+229
+229
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.1, 'hidden_layer_sizes': 10, 'activation': 'tanh'}
+Getting Predictions
+height
+Calculating Performances
+MSE: 91.28714472516533, R2: -0.05277166703064551
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+229
+229
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.1, 'hidden_layer_sizes': 10, 'activation': 'tanh'}
+Getting Predictions
+age
+Calculating Performances
+MSE: 42.48225832471119, R2: -0.022748781075727198
+---------------------------------------------
+Organ: liver, Label: volume
+Data Processing
+99
+99
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': (10, 20, 30, 10), 'activation': 'tanh'}
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.09802465768740731, R2: -0.06303227687883406
+---------------------------------------------
+Organ: liver, Label: VAT
+Data Processing
+130
+130
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 10, 'activation': 'tanh'}
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 5.843545168051981, R2: -0.08246528780936901
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+130
+130
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': (10, 20, 30, 20, 10), 'activation': 'tanh'}
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 5.908537583783869, R2: 0.00018026240105062374
+---------------------------------------------
+Organ: liver, Label: bmi
+Data Processing
+376
+376
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.1, 'hidden_layer_sizes': (1, 5, 10, 20, 30), 'activation': 'relu'}
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 10.727181405811837, R2: -0.0003366971156828491
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+376
+376
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 10, 'activation': 'tanh'}
+Getting Predictions
+weight
+Calculating Performances
+MSE: 168.27640829211288, R2: -0.009910046040739973
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+376
+376
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'adam', 'learning_rate_init': 0.1, 'hidden_layer_sizes': (6, 5), 'activation': 'tanh'}
+Getting Predictions
+height
+Calculating Performances
+MSE: 76.47577284673297, R2: -0.001290326941970843
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+376
+376
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': (1, 5, 10, 20, 30), 'activation': 'tanh'}
+Getting Predictions
+age
+Calculating Performances
+MSE: 59.90042252229044, R2: -0.09618264751985617
+---------------------------------------------
+Organ: liver, Label: VAT
+Data Processing
+211
+211
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.01, 'hidden_layer_sizes': (6, 5), 'activation': 'tanh'}
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 6.0313458480571125, R2: -0.06650770208091394
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+211
+211
+Preparing Model
+Starting Training
+Best parameters found:
+ {'solver': 'sgd', 'learning_rate_init': 0.1, 'hidden_layer_sizes': (10, 20, 30, 10), 'activation': 'tanh'}
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 7.355408245508079, R2: -0.013245572365346847
+---------------------------------------------

@@ -1,0 +1,395 @@
+Organ: liver, Label: sex
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.997728821258233, Confusion Matrix: [[2276    5]
+ [   5 2117]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: bmi
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 10.19050601958329, R2: 0.4603049987914951
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 81.10611889893283, R2: 0.642686496519767
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 35.572479075740524, R2: 0.5877625223192637
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 49.585217463129965, R2: 0.14190828543477074
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.026476258880654822, R2: 0.7201423601369491
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: sex
+Data Processing
+Starting PCA
+22007
+22007
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.9993184915947296, Confusion Matrix: [[2286    2]
+ [   1 2113]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: bmi
+Data Processing
+Starting PCA
+22007
+22007
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 15.759249164905508, R2: 0.15406796825323577
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: weight
+Data Processing
+Starting PCA
+22007
+22007
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 131.82951887790963, R2: 0.4016649526024102
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: height
+Data Processing
+Starting PCA
+22007
+22007
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 39.48654625001865, R2: 0.5449977812062312
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: age
+Data Processing
+Starting PCA
+22007
+22007
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 54.436537746004916, R2: 0.06582934475965219
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: volume
+Data Processing
+Starting PCA
+1174
+1174
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.0008034165017393844, R2: 0.862310336746009
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: sex
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.9981826442526125, Confusion Matrix: [[2255    3]
+ [   5 2139]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: bmi
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 15.169951448168757, R2: 0.1533130903438843
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: weight
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 138.8003475961559, R2: 0.3712815433329355
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: height
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 39.135446176475, R2: 0.543432043482983
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: age
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 52.00072585754075, R2: 0.11233609328491323
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.00021465297210263108, R2: 0.2880807646539414
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: sex
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.9997728305315765, Confusion Matrix: [[2262    0]
+ [   1 2139]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: bmi
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 13.735379338254207, R2: 0.22857470631262222
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: weight
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 123.0201432226092, R2: 0.4447262240764599
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: height
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 36.10665496600676, R2: 0.5751240989875366
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: age
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 55.55759429947268, R2: 0.052058561920496293
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.0006160527613923959, R2: 0.4608320147796454
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: sex
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 1.0, Confusion Matrix: [[2285    0]
+ [   0 2117]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: bmi
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 14.371537693188293, R2: 0.1990922092010169
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: weight
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 126.09061058719, R2: 0.43358731087305147
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: height
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 36.833033814911374, R2: 0.5719058792254972
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: age
+Data Processing
+Starting PCA
+22010
+22010
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 55.1141105695534, R2: 0.04842173989182197
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.00029569482347206543, R2: 0.6344299034108656
+Gathering Feature Importance
+---------------------------------------------

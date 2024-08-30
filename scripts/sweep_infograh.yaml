@@ -1,0 +1,47 @@
+program: ./infograph_w_discriminator/unsupervised/main.py
+method: bayes
+metric:
+  goal: maximizes
+  name: randomforest_score
+parameters:
+  batchs:
+    values: [16,32,64,128]
+  num_gc_layers:
+    max: 10
+    min: 1
+    distribution: int_uniform
+  optimizer:
+    values:
+      - adam
+      - sgd
+    distribution: categorical
+  scheduler:
+    values:
+      - StepLR
+      - ReduceLROnPlateau
+      - CosineAnnealingLR
+    distribution: categorical
+  hidden_dim:
+    max: 256
+    min: 32
+    distribution: int_uniform
+  lr:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  weight_decay:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  momentum:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  step_size:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  gamma:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values

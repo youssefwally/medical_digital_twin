@@ -1,0 +1,41 @@
+program: autoencoder.py
+method: bayes
+metric:
+  goal: maximize
+  name: AUC
+parameters:
+  use_input_encoder:
+    values:
+      - "True"
+      - "False"
+    distribution: categorical
+  normalization:
+    values:
+      - "True"
+      - "False"
+    distribution: categorical
+  optimizer:
+    values:
+      - adam
+      - sgd
+    distribution: categorical
+  encoder_features:
+    max: 1024
+    min: 16
+    distribution: int_uniform
+  layer:
+    values: ['gcn']
+  activation:
+    values: ['ReLU','LeakyReLU','Tanh']
+  lr:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  weight_decay:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  dropout:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values

@@ -1,0 +1,96 @@
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (104,) + inhomogeneous part.
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (104,) + inhomogeneous part.
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (104,) + inhomogeneous part.
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (104,) + inhomogeneous part.
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (104,) + inhomogeneous part.
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (4,) + inhomogeneous part.
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (104,) + inhomogeneous part.
+Traceback (most recent call last):
+  File "random_forest.py", line 398, in <module>
+    rfc.fit(x_train, y_train)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/ensemble/_forest.py", line 331, in fit
+    X, y = self._validate_data(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/base.py", line 596, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 1074, in check_X_y
+    X = check_array(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/sklearn/utils/validation.py", line 856, in check_array
+    array = np.asarray(array, order=order, dtype=dtype)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (104,) + inhomogeneous part.

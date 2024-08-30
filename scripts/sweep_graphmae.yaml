@@ -1,0 +1,50 @@
+program: ./GraphMAE/graphmae.py
+method: bayes
+metric:
+  goal: minimize
+  name: test_loss
+parameters:
+  num_layers:
+    max: 8
+    min: 1
+    distribution: int_uniform
+  optimizer:
+    values:
+      - adam
+      - adamw
+      - adadelta
+      - radam
+      - sgd
+    distribution: categorical
+  activation:
+    values: ['relu','gelu','prelu', 'elu']
+  pooling_dim:
+    values: [32, 64, 256, 512, 1000]
+  lr:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  weight_decay:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  in_drop:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  attn_drop:
+    max: 1e-1
+    min: 1e-6
+    distribution: log_uniform_values
+  mask_rate:
+    max: 0.9
+    min: 0.0
+    distribution: uniform 
+  drop_edge_rate:
+    max: 0.9
+    min: 0.0
+    distribution: uniform 
+  replace_rate:
+    max: 0.9
+    min: 0.0
+    distribution: uniform 

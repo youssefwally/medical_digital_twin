@@ -1,0 +1,69 @@
+Label: organ
+Data Processing
+Label: sex
+Data Processing
+2557
+2557
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.822265625, Confusion Matrix: [[215  56]
+ [ 35 206]]
+Gathering Feature Importance
+Label: bmi
+Data Processing
+2469
+2469
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 9.215255407909686, R2: 0.5070714770240645
+Gathering Feature Importance
+Label: weight
+Data Processing
+2469
+2469
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 75.61870073734389, R2: 0.6797427181698819
+Gathering Feature Importance
+Label: height
+Data Processing
+2473
+2473
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 56.208604767010044, R2: 0.3628499756765694
+Gathering Feature Importance
+Label: age
+Data Processing
+2557
+2557
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 51.72950135773765, R2: 0.13175039888010964
+Gathering Feature Importance
+Label: volume
+Data Processing
+99
+99
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.004605095878893166, R2: 0.9500598556233059
+Gathering Feature Importance

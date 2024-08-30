@@ -1,0 +1,432 @@
+wandb: Starting wandb agent 🕵️
+2023-11-27 21:01:49,911 - wandb.wandb_agent - INFO - Running runs: []
+2023-11-27 21:01:50,703 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-27 21:01:50,703 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: Tanh
+	batchs: 64
+	dropout: 0.027405068593768067
+	encoder_features: 4
+	layer: sageconv
+	lr: 1.328067249142344e-05
+	normalization: False
+	num_conv_layers: 3
+	optimizer: sgd
+	path: ../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+	scheduler: ReduceLROnPlateau
+	scheduler_gamma: 0.6
+	step_size: 37
+	use_input_encoder: True
+	weight_decay: 3.299577126354709e-05
+2023-11-27 21:01:50,713 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=Tanh --batchs=64 --dropout=0.027405068593768067 --encoder_features=4 --layer=sageconv --lr=1.328067249142344e-05 --normalization=False --num_conv_layers=3 --optimizer=sgd --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/ --scheduler=ReduceLROnPlateau --scheduler_gamma=0.6 --step_size=37 --use_input_encoder=True --weight_decay=3.299577126354709e-05
+2023-11-27 21:01:55,733 - wandb.wandb_agent - INFO - Running runs: ['twe7fnjk']
+INFO - 2023-11-27 21:02:00,808 - instantiator - Created a temporary directory at /tmp/tmpu9uqr2kl
+INFO - 2023-11-27 21:02:00,808 - instantiator - Writing /tmp/tmpu9uqr2kl/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231127_210201-twe7fnjk
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run young-sweep-7
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/ix6l2xpt
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/twe7fnjk
+Processing...
+Done!
+Processing...
+Done!
+Processing...
+Done!
+Traceback (most recent call last):
+  File "./graph_classifier.py", line 798, in <module>
+    loss = train(model, optimizer, train_loader, wandb.config.alpha, wandb.config.gamma, wandb.config.threshold, loss_fn)
+  File "./graph_classifier.py", line 523, in train
+    out = model(data)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 171, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 181, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 89, in parallel_apply
+    output.reraise()
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in replica 1 on device 1.
+Original Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 64, in _worker
+    output = module(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "./graph_classifier.py", line 427, in forward
+    x = self.input_encoder(x)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0! (when checking argument for argument mat1 in method wrapper_addmm)
+
+2023-11-27 21:02:57,587 - wandb.wandb_agent - INFO - Cleaning up finished run: twe7fnjk
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: 🚀 View run young-sweep-7 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/twe7fnjk
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231127_210201-twe7fnjk/logs
+2023-11-27 21:03:04,824 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-27 21:03:04,825 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: Tanh
+	batchs: 64
+	dropout: 1.5734809469795392e-06
+	encoder_features: 4
+	layer: gcn
+	lr: 0.00022344536292148883
+	normalization: False
+	num_conv_layers: 5
+	optimizer: sgd
+	path: ../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+	scheduler: ReduceLROnPlateau
+	scheduler_gamma: 0.2
+	step_size: 43
+	use_input_encoder: True
+	weight_decay: 5.0297054013195685e-06
+2023-11-27 21:03:04,832 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=Tanh --batchs=64 --dropout=1.5734809469795392e-06 --encoder_features=4 --layer=gcn --lr=0.00022344536292148883 --normalization=False --num_conv_layers=5 --optimizer=sgd --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/ --scheduler=ReduceLROnPlateau --scheduler_gamma=0.2 --step_size=43 --use_input_encoder=True --weight_decay=5.0297054013195685e-06
+2023-11-27 21:03:09,847 - wandb.wandb_agent - INFO - Running runs: ['v1rw0gt8']
+INFO - 2023-11-27 21:03:13,360 - instantiator - Created a temporary directory at /tmp/tmpnsn_twbp
+INFO - 2023-11-27 21:03:13,361 - instantiator - Writing /tmp/tmpnsn_twbp/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231127_210316-v1rw0gt8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vague-sweep-8
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/ix6l2xpt
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/v1rw0gt8
+Processing...
+Done!
+Processing...
+Done!
+Processing...
+Done!
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: 🚀 View run vague-sweep-8 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/v1rw0gt8
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231127_210316-v1rw0gt8/logs
+Traceback (most recent call last):
+  File "./graph_classifier.py", line 798, in <module>
+    loss = train(model, optimizer, train_loader, wandb.config.alpha, wandb.config.gamma, wandb.config.threshold, loss_fn)
+  File "./graph_classifier.py", line 523, in train
+    out = model(data)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 171, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 181, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 89, in parallel_apply
+    output.reraise()
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in replica 1 on device 1.
+Original Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 64, in _worker
+    output = module(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "./graph_classifier.py", line 427, in forward
+    x = self.input_encoder(x)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0! (when checking argument for argument mat1 in method wrapper_addmm)
+
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 260, in check_network_status
+    self._loop_check_status(
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 216, in _loop_check_status
+    local_handle = request()
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 795, in deliver_network_status
+    return self._deliver_network_status(status)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 601, in _deliver_network_status
+    return self._deliver_record(record)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 560, in _deliver_record
+    handle = mailbox._deliver_record(record, interface=self)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/lib/mailbox.py", line 455, in _deliver_record
+    interface._publish(record)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    self._sock_client.send_record_publish(record)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 221, in send_record_publish
+    self.send_server_request(server_req)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 155, in send_server_request
+    self._send_message(msg)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 152, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe
+2023-11-27 21:03:56,259 - wandb.wandb_agent - INFO - Cleaning up finished run: v1rw0gt8
+2023-11-27 21:03:57,021 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-27 21:03:57,021 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: ELU
+	batchs: 256
+	dropout: 0.005121308999364622
+	encoder_features: 256
+	layer: sageconv
+	lr: 0.006034204708210507
+	normalization: False
+	num_conv_layers: 3
+	optimizer: adam
+	path: ../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+	scheduler: ReduceLROnPlateau
+	scheduler_gamma: 0.9
+	step_size: 12
+	use_input_encoder: True
+	weight_decay: 0.017864319420013368
+2023-11-27 21:03:57,029 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=ELU --batchs=256 --dropout=0.005121308999364622 --encoder_features=256 --layer=sageconv --lr=0.006034204708210507 --normalization=False --num_conv_layers=3 --optimizer=adam --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/ --scheduler=ReduceLROnPlateau --scheduler_gamma=0.9 --step_size=12 --use_input_encoder=True --weight_decay=0.017864319420013368
+2023-11-27 21:04:02,044 - wandb.wandb_agent - INFO - Running runs: ['u3vlsdth']
+INFO - 2023-11-27 21:04:03,454 - instantiator - Created a temporary directory at /tmp/tmpr5e8543a
+INFO - 2023-11-27 21:04:03,455 - instantiator - Writing /tmp/tmpr5e8543a/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231127_210405-u3vlsdth
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run graceful-sweep-9
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/ix6l2xpt
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/u3vlsdth
+Processing...
+Done!
+Processing...
+Done!
+Processing...
+Done!
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: 🚀 View run graceful-sweep-9 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/u3vlsdth
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231127_210405-u3vlsdth/logs
+Traceback (most recent call last):
+  File "./graph_classifier.py", line 798, in <module>
+    loss = train(model, optimizer, train_loader, wandb.config.alpha, wandb.config.gamma, wandb.config.threshold, loss_fn)
+  File "./graph_classifier.py", line 523, in train
+    out = model(data)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 171, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 181, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 89, in parallel_apply
+    output.reraise()
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+torch.cuda.OutOfMemoryError: Caught OutOfMemoryError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 64, in _worker
+    output = module(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "./graph_classifier.py", line 434, in forward
+    x = layer(x, edge_index)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/sage_conv.py", line 136, in forward
+    out = out + self.lin_r(x_r)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.28 GiB (GPU 0; 44.43 GiB total capacity; 31.32 GiB already allocated; 9.64 GiB free; 33.72 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+2023-11-27 21:04:53,597 - wandb.wandb_agent - INFO - Cleaning up finished run: u3vlsdth
+2023-11-27 21:04:54,425 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-27 21:04:54,425 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: ReLU
+	batchs: 256
+	dropout: 0.01722900530740312
+	encoder_features: 16
+	layer: gcn
+	lr: 0.003567827259814861
+	normalization: True
+	num_conv_layers: 4
+	optimizer: adam
+	path: ../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+	scheduler: CosineAnnealingLR
+	scheduler_gamma: 0.3
+	step_size: 14
+	use_input_encoder: False
+	weight_decay: 0.000327124979961606
+2023-11-27 21:04:54,433 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=ReLU --batchs=256 --dropout=0.01722900530740312 --encoder_features=16 --layer=gcn --lr=0.003567827259814861 --normalization=True --num_conv_layers=4 --optimizer=adam --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/ --scheduler=CosineAnnealingLR --scheduler_gamma=0.3 --step_size=14 --use_input_encoder=False --weight_decay=0.000327124979961606
+2023-11-27 21:04:59,448 - wandb.wandb_agent - INFO - Running runs: ['e3gvtok4']
+INFO - 2023-11-27 21:05:03,658 - instantiator - Created a temporary directory at /tmp/tmpx2rt3xcp
+INFO - 2023-11-27 21:05:03,659 - instantiator - Writing /tmp/tmpx2rt3xcp/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231127_210506-e3gvtok4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lemon-sweep-10
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/ix6l2xpt
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/e3gvtok4
+Processing...
+Done!
+Processing...
+Done!
+Processing...
+Done!
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: 🚀 View run lemon-sweep-10 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/e3gvtok4
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231127_210506-e3gvtok4/logs
+Traceback (most recent call last):
+  File "./graph_classifier.py", line 798, in <module>
+    loss = train(model, optimizer, train_loader, wandb.config.alpha, wandb.config.gamma, wandb.config.threshold, loss_fn)
+  File "./graph_classifier.py", line 523, in train
+    out = model(data)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 171, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 181, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 89, in parallel_apply
+    output.reraise()
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+ValueError: Caught ValueError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 239, in __lift__
+    return src.index_select(self.node_dim, index)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 57.86 GiB (GPU 0; 44.43 GiB total capacity; 11.63 GiB already allocated; 31.47 GiB free; 11.89 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 64, in _worker
+    output = module(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "./graph_classifier.py", line 445, in forward
+    x = layer(x, edge_index)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/gcn_conv.py", line 198, in forward
+    out = self.propagate(edge_index, x=x, edge_weight=edge_weight,
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 429, in propagate
+    coll_dict = self.__collect__(self.__user_args__, edge_index,
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 301, in __collect__
+    data = self.__lift__(data, edge_index, dim)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 242, in __lift__
+    raise ValueError(
+ValueError: Encountered a CUDA error. Please ensure that all indices in 'edge_index' point to valid indices in the interval [0, 5552257) in your node feature matrix and try again.
+
+2023-11-27 21:05:51,201 - wandb.wandb_agent - INFO - Cleaning up finished run: e3gvtok4
+2023-11-27 21:05:52,104 - wandb.wandb_agent - INFO - Agent received command: run
+2023-11-27 21:05:52,104 - wandb.wandb_agent - INFO - Agent starting run with config:
+	activation: ELU
+	batchs: 256
+	dropout: 0.0011980464870687453
+	encoder_features: 516
+	layer: sageconv
+	lr: 4.396670991567135e-06
+	normalization: True
+	num_conv_layers: 2
+	optimizer: sgd
+	path: ../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/
+	scheduler: ReduceLROnPlateau
+	scheduler_gamma: 0.9
+	step_size: 50
+	use_input_encoder: True
+	weight_decay: 0.05218663338473352
+2023-11-27 21:05:52,112 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python ./graph_classifier.py --activation=ELU --batchs=256 --dropout=0.0011980464870687453 --encoder_features=516 --layer=sageconv --lr=4.396670991567135e-06 --normalization=True --num_conv_layers=2 --optimizer=sgd --path=../../../../../../vol/aimspace/users/wyo/registered_meshes/original_meshes/ --scheduler=ReduceLROnPlateau --scheduler_gamma=0.9 --step_size=50 --use_input_encoder=True --weight_decay=0.05218663338473352
+2023-11-27 21:05:57,127 - wandb.wandb_agent - INFO - Running runs: ['qnmorm52']
+INFO - 2023-11-27 21:05:58,519 - instantiator - Created a temporary directory at /tmp/tmps1z8mpxe
+INFO - 2023-11-27 21:05:58,520 - instantiator - Writing /tmp/tmps1z8mpxe/_remote_module_non_scriptable.py
+wandb: Currently logged in as: yussufwaly. Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: wandb version 0.16.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20231127_210601-qnmorm52
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run celestial-sweep-11
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graph_classifier
+wandb: 🧹 View sweep at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/sweeps/ix6l2xpt
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/qnmorm52
+Processing...
+Done!
+Processing...
+Done!
+Processing...
+Done!
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.027 MB of 0.027 MB uploaded (0.000 MB deduped)wandb: \ 0.047 MB of 0.047 MB uploaded (0.000 MB deduped)wandb: 🚀 View run celestial-sweep-11 at: https://wandb.ai/yussufwaly/digital_twin_graph_classifier/runs/qnmorm52
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20231127_210601-qnmorm52/logs
+Traceback (most recent call last):
+  File "./graph_classifier.py", line 798, in <module>
+    loss = train(model, optimizer, train_loader, wandb.config.alpha, wandb.config.gamma, wandb.config.threshold, loss_fn)
+  File "./graph_classifier.py", line 523, in train
+    out = model(data)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 171, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 181, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 89, in parallel_apply
+    output.reraise()
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+ValueError: Caught ValueError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 239, in __lift__
+    return src.index_select(self.node_dim, index)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 46.06 GiB (GPU 0; 44.43 GiB total capacity; 10.78 GiB already allocated; 32.56 GiB free; 10.80 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 64, in _worker
+    output = module(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "./graph_classifier.py", line 445, in forward
+    x = layer(x, edge_index)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/sage_conv.py", line 131, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 429, in propagate
+    coll_dict = self.__collect__(self.__user_args__, edge_index,
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 301, in __collect__
+    data = self.__lift__(data, edge_index, dim)
+  File "/u/home/wyo/.conda/envs/digital_twin/lib/python3.8/site-packages/torch_geometric/nn/conv/message_passing.py", line 242, in __lift__
+    raise ValueError(
+ValueError: Encountered a CUDA error. Please ensure that all indices in 'edge_index' point to valid indices in the interval [0, 5369201) in your node feature matrix and try again.
+
+2023-11-27 21:06:48,709 - wandb.wandb_agent - ERROR - Detected 5 failed runs in a row, shutting down.
+2023-11-27 21:06:48,709 - wandb.wandb_agent - INFO - To change this value set WANDB_AGENT_MAX_INITIAL_FAILURES=val
+wandb: Terminating and syncing runs. Press ctrl-c to kill.

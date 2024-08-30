@@ -1,0 +1,16 @@
+30379
+{0: 15726, 1: 14653}
+sex
+Accuracy: 0.8245556287030942, Confusion Matrix: 
+[[2565  538]
+ [ 528 2445]]
+--------------------------------------
+14672
+{'left_kidney_mesh.ply': 2934, 'liver_mesh.ply': 2935, 'pancreas_mesh.ply': 2935, 'right_kidney_mesh.ply': 2935, 'spleen_mesh.ply': 2933}
+organ
+Accuracy: 0.9996592844974447, Confusion Matrix: 
+[[605   0   0   0   0]
+ [  0 601   0   0   0]
+ [  0   0 539   0   0]
+ [  0   0   0 594   0]
+ [  1   0   0   0 595]]

@@ -1,0 +1,24 @@
+Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.029008407856301335, R2: 0.6933772027444198
+Gathering Feature Importance
+Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.06058185062277435, R2: 0.3596416393173517
+Gathering Feature Importance

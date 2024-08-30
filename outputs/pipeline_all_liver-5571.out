@@ -1,0 +1,81 @@
+../../../../../../vol/aimspace/users/wyo/registered_meshes/2000/
+---------------------------------------------
+Label: sex
+Data Processing
+Starting PCA
+30379
+30379
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.9904542462146149, Confusion Matrix: [[3132   18]
+ [  40 2886]]
+Gathering Feature Importance
+---------------------------------------------
+Label: bmi
+Data Processing
+Starting PCA
+29348
+29348
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 11.719794515685313, R2: 0.37403343048773285
+Gathering Feature Importance
+---------------------------------------------
+Label: weight
+Data Processing
+Starting PCA
+29377
+29377
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 120.32520457959923, R2: 0.49257138748808604
+Gathering Feature Importance
+---------------------------------------------
+Label: height
+Data Processing
+Starting PCA
+29401
+29401
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 42.51647620931551, R2: 0.5000957338386499
+Gathering Feature Importance
+---------------------------------------------
+Label: age
+Data Processing
+Starting PCA
+30379
+30379
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 50.97882925558025, R2: 0.12281174706917419
+Gathering Feature Importance
+---------------------------------------------
+Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.0636424909194075, R2: 0.3272902571320331
+Gathering Feature Importance
+---------------------------------------------

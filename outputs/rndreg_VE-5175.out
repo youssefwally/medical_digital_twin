@@ -1,0 +1,73 @@
+Label: sex
+Data Processing
+Starting PCA
+30379
+30379
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.8059578670177748, Confusion Matrix: [[2494  609]
+ [ 570 2403]]
+Gathering Feature Importance
+Label: bmi
+Data Processing
+Starting PCA
+29348
+29348
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 7.812954814880623, R2: 0.5886648571014479
+Gathering Feature Importance
+Label: weight
+Data Processing
+Starting PCA
+29377
+29377
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 57.296872501133805, R2: 0.7433014533110407
+Gathering Feature Importance
+Label: height
+Data Processing
+Starting PCA
+29401
+29401
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 49.84265821919774, R2: 0.42653787245980934
+Gathering Feature Importance
+Label: age
+Data Processing
+Starting PCA
+30379
+30379
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 50.66642830915205, R2: 0.15519931561184186
+Gathering Feature Importance
+Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.02743911141215175, R2: 0.7099648785593771
+Gathering Feature Importance

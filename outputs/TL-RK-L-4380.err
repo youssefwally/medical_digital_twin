@@ -1,0 +1,25 @@
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.15.5 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.15.3
+wandb: Run data is saved locally in /u/home/wyo/digital_twin/scripts/wandb/run-20230711_232337-qbxka86c
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ethereal-glade-54
+wandb: ⭐️ View project at https://wandb.ai/yussufwaly/digital_twin_graphmae
+wandb: 🚀 View run at https://wandb.ai/yussufwaly/digital_twin_graphmae/runs/qbxka86c
+./GraphMAE/graphmae_pred.py:91: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525552411/work/torch/csrc/utils/tensor_new.cpp:230.)
+  dgl_graph.ndata['feat'] = torch.tensor(points, dtype=torch.float32)
+INFO - 2023-07-12 00:06:27,550 - graphmae_pred - start test..
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.027 MB of 0.027 MB uploaded (0.000 MB deduped)wandb: \ 0.027 MB of 0.040 MB uploaded (0.000 MB deduped)wandb: | 0.040 MB of 0.040 MB uploaded (0.000 MB deduped)wandb: / 0.040 MB of 0.040 MB uploaded (0.000 MB deduped)wandb: 
+wandb: Run history:
+wandb:   mean_test_loss ▁
+wandb: median_test_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:   mean_test_loss 0.00164
+wandb: median_test_loss 0.00155
+wandb: 
+wandb: 🚀 View run ethereal-glade-54 at: https://wandb.ai/yussufwaly/digital_twin_graphmae/runs/qbxka86c
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20230711_232337-qbxka86c/logs

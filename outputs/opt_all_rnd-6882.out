@@ -1,0 +1,81 @@
+../../../../../../vol/aimspace/users/wyo/registered_meshes/2000/
+---------------------------------------------
+Organ: liver, Label: sex
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.9954576425164661, Confusion Matrix: [[2271   10]
+ [  10 2112]]
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: bmi
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 11.79573247313885, R2: 0.3752912918051352
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: weight
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 107.6230058082342, R2: 0.5258661888589071
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: height
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 39.91381747364432, R2: 0.5374522139738751
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: age
+Data Processing
+Starting PCA
+22011
+22011
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 49.87002762830957, R2: 0.13697953336977686
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.05837213563817879, R2: 0.3829986257838488
+Gathering Feature Importance
+---------------------------------------------

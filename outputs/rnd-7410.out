@@ -1,0 +1,156 @@
+Organ: liver, Label: VAT
+Data Processing
+Starting PCA
+17449
+17449
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 2.0310214542323766, R2: 0.6011980198276601
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+Starting PCA
+17439
+17439
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 5.870521615185415, R2: 0.4095702925392296
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: VAT
+Data Processing
+Starting PCA
+17444
+17444
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 3.206537514446211, R2: 0.37864345800877
+Gathering Feature Importance
+---------------------------------------------
+Organ: spleen, Label: ASAT
+Data Processing
+Starting PCA
+17434
+17434
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 7.729738669942251, R2: 0.23286473796449014
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: VAT
+Data Processing
+Starting PCA
+17448
+17448
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 2.9649173777412923, R2: 0.4180781134238153
+Gathering Feature Importance
+---------------------------------------------
+Organ: pancreas, Label: ASAT
+Data Processing
+Starting PCA
+17438
+17438
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 8.08730049220096, R2: 0.1972154807041675
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: VAT
+Data Processing
+Starting PCA
+17447
+17447
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 2.939472150044854, R2: 0.4238530766973043
+Gathering Feature Importance
+---------------------------------------------
+Organ: left_kidney, Label: ASAT
+Data Processing
+Starting PCA
+17437
+17437
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 7.126239225921939, R2: 0.25359931071460506
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: VAT
+Data Processing
+Starting PCA
+17448
+17448
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 2.858104597462089, R2: 0.4299776998678947
+Gathering Feature Importance
+---------------------------------------------
+Organ: right_kidney, Label: ASAT
+Data Processing
+Starting PCA
+17438
+17438
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 7.573615797466214, R2: 0.22619202391976034
+Gathering Feature Importance
+---------------------------------------------
+radiomics:
+---------------------------------------------
+Organ: liver, Label: VAT
+Data Processing
+1434
+1434
+Preparing Model
+Starting Training
+Getting Predictions
+VAT
+Calculating Performances
+MSE: 1.346942014782854, R2: 0.7082541758954208
+Gathering Feature Importance
+---------------------------------------------
+Organ: liver, Label: ASAT
+Data Processing
+1433
+1433
+Preparing Model
+Starting Training
+Getting Predictions
+ASAT
+Calculating Performances
+MSE: 5.3447894964907015, R2: 0.3453689363743744
+Gathering Feature Importance
+---------------------------------------------

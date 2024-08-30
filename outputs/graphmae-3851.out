@@ -1,0 +1,67 @@
+num parameters for finetuning: 771
+--- Best ValAcc: 0.6015 in epoch 29, Early-stopping-TestAcc: 0.6035, Final-TestAcc: 0.6035 --- 
+PreModel(
+  (encoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=3, out_features=256, bias=False)
+        (feat_drop): Dropout(p=0.2, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+        (res_fc): Linear(in_features=3, out_features=256, bias=False)
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (1): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=0.2, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (2): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=0.2, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (3): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=0.2, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (4): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=0.2, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+    )
+    (head): Identity()
+  )
+  (decoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=256, out_features=3, bias=False)
+        (feat_drop): Dropout(p=0.2, inplace=False)
+        (attn_drop): Dropout(p=0.1, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+    (head): Identity()
+  )
+  (encoder_to_decoder): Linear(in_features=256, out_features=256, bias=False)
+  (criterion): MSELoss()
+)

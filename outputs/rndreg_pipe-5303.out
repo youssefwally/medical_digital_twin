@@ -1,0 +1,419 @@
+PreModel(
+  (encoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=3, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Linear(in_features=3, out_features=256, bias=False)
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (1): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (2): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (3): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (4): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+    )
+    (head): Identity()
+  )
+  (decoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=256, out_features=3, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+      )
+    )
+    (head): Identity()
+  )
+  (encoder_to_decoder): Linear(in_features=1280, out_features=256, bias=False)
+  (criterion): MSELoss()
+)
+---------------------------------------------
+PreModel(
+  (encoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=3, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Linear(in_features=3, out_features=256, bias=False)
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (1): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (2): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (3): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (4): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+    )
+    (head): Identity()
+  )
+  (decoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=256, out_features=3, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+      )
+    )
+    (head): Identity()
+  )
+  (encoder_to_decoder): Linear(in_features=1280, out_features=256, bias=False)
+  (criterion): MSELoss()
+)
+---------------------------------------------
+PreModel(
+  (encoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=3, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Linear(in_features=3, out_features=256, bias=False)
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (1): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (2): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (3): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (4): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+    )
+    (head): Identity()
+  )
+  (decoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=256, out_features=3, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+      )
+    )
+    (head): Identity()
+  )
+  (encoder_to_decoder): Linear(in_features=1280, out_features=256, bias=False)
+  (criterion): MSELoss()
+)
+---------------------------------------------
+PreModel(
+  (encoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=3, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Linear(in_features=3, out_features=256, bias=False)
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (1): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (2): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (3): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (4): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+    )
+    (head): Identity()
+  )
+  (decoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=256, out_features=3, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+      )
+    )
+    (head): Identity()
+  )
+  (encoder_to_decoder): Linear(in_features=1280, out_features=256, bias=False)
+  (criterion): MSELoss()
+)
+---------------------------------------------
+PreModel(
+  (encoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=3, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Linear(in_features=3, out_features=256, bias=False)
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (1): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (2): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (3): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+      (4): GATConv(
+        (fc): Linear(in_features=256, out_features=256, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+        (res_fc): Identity()
+        (activation): PReLU(num_parameters=1)
+        (norm): Identity()
+      )
+    )
+    (head): Identity()
+  )
+  (decoder): GAT(
+    (gat_layers): ModuleList(
+      (0): GATConv(
+        (fc): Linear(in_features=256, out_features=3, bias=False)
+        (feat_drop): Dropout(p=7e-06, inplace=False)
+        (attn_drop): Dropout(p=0.01, inplace=False)
+        (leaky_relu): LeakyReLU(negative_slope=0.5)
+      )
+    )
+    (head): Identity()
+  )
+  (encoder_to_decoder): Linear(in_features=1280, out_features=256, bias=False)
+  (criterion): MSELoss()
+)
+---------------------------------------------
+../../../../../../vol/aimspace/users/wyo/registered_meshes/2000/
+---------------------------------------------
+../../../../../../vol/aimspace/users/wyo/registered_meshes/2000/
+---------------------------------------------
+../../../../../../vol/aimspace/users/wyo/registered_meshes/2000/
+---------------------------------------------
+../../../../../../vol/aimspace/users/wyo/registered_meshes/2000/
+---------------------------------------------
+../../../../../../vol/aimspace/users/wyo/registered_meshes/2000/
+---------------------------------------------
+Label: sex
+Data Processing
+Starting PCA
+30379
+30379
+Preparing Model
+Starting Training
+Getting Predictions
+sex
+Calculating Performances
+Accuracy: 0.8240618828176431, Confusion Matrix: [[2562  541]
+ [ 528 2445]]
+Gathering Feature Importance
+---------------------------------------------
+Label: bmi
+Data Processing
+Starting PCA
+29348
+29348
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 7.032485775804561, R2: 0.6297548609889403
+Gathering Feature Importance
+---------------------------------------------
+Label: weight
+Data Processing
+Starting PCA
+29377
+29377
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 57.08592160984651, R2: 0.7442465448117175
+Gathering Feature Importance
+---------------------------------------------
+Label: height
+Data Processing
+Starting PCA
+29401
+29401
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 49.690086404533766, R2: 0.42829327958627295
+Gathering Feature Importance
+---------------------------------------------
+Label: age
+Data Processing
+Starting PCA
+30379
+30379
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 50.62226266655203, R2: 0.15593572365046016
+Gathering Feature Importance
+---------------------------------------------
+Label: volume
+Data Processing
+Starting PCA
+1175
+1175
+Preparing Model
+Starting Training
+Getting Predictions
+volume
+Calculating Performances
+MSE: 0.02681877088556438, R2: 0.7165219618869234
+Gathering Feature Importance
+---------------------------------------------

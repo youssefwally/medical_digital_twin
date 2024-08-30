@@ -1,0 +1,29 @@
+30379
+30379
+{0: 15726, 1: 14653}
+Best hyperparameters: {'max_leaf_nodes': 770, 'n_estimators': 344}
+0.7440233215912659 {'max_leaf_nodes': 103, 'n_estimators': 436}
+0.7511006135166688 {'max_leaf_nodes': 861, 'n_estimators': 271}
+0.740978325007217 {'max_leaf_nodes': 107, 'n_estimators': 72}
+0.7304035393824875 {'max_leaf_nodes': 701, 'n_estimators': 21}
+0.7488376115263586 {'max_leaf_nodes': 615, 'n_estimators': 122}
+0.7502778391548421 {'max_leaf_nodes': 467, 'n_estimators': 215}
+0.7493725232238113 {'max_leaf_nodes': 331, 'n_estimators': 459}
+0.7416779134845833 {'max_leaf_nodes': 88, 'n_estimators': 373}
+0.743447240698835 {'max_leaf_nodes': 100, 'n_estimators': 872}
+0.7484261481532275 {'max_leaf_nodes': 664, 'n_estimators': 131}
+0.7507302770095062 {'max_leaf_nodes': 662, 'n_estimators': 309}
+0.7515121869452254 {'max_leaf_nodes': 770, 'n_estimators': 344}
+0.7498663165210971 {'max_leaf_nodes': 492, 'n_estimators': 414}
+0.7511830450304473 {'max_leaf_nodes': 806, 'n_estimators': 386}
+0.7472739609709598 {'max_leaf_nodes': 192, 'n_estimators': 956}
+0.7476854074124869 {'max_leaf_nodes': 277, 'n_estimators': 161}
+0.7499074687844718 {'max_leaf_nodes': 460, 'n_estimators': 314}
+0.7275643464443209 {'max_leaf_nodes': 22, 'n_estimators': 253}
+0.7515121446162156 {'max_leaf_nodes': 748, 'n_estimators': 857}
+0.7504836004717146 {'max_leaf_nodes': 561, 'n_estimators': 475}
+0.7440233215912659 {'max_leaf_nodes': 103, 'n_estimators': 436}
+0.7511006135166688 {'max_leaf_nodes': 861, 'n_estimators': 271}
+0.740978325007217 {'max_leaf_nodes': 107, 'n_estimators': 72}
+0.7304035393824875 {'max_leaf_nodes': 701, 'n_estimators': 21}
+0.7488376115263586 {'max_leaf_nodes': 615, 'n_estimators': 122}

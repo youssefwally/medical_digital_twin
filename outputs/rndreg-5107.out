@@ -1,0 +1,44 @@
+Label: bmi
+Data Processing
+Starting PCA
+29348
+Preparing Model
+Starting Training
+Getting Predictions
+bmi
+Calculating Performances
+MSE: 7.734218836992636, R2: 0.5928101357422673
+Gathering Feature Importance
+Label: weight
+Data Processing
+Starting PCA
+29377
+Preparing Model
+Starting Training
+Getting Predictions
+weight
+Calculating Performances
+MSE: 65.70023210559197, R2: 0.7056531471539038
+Gathering Feature Importance
+Label: height
+Data Processing
+Starting PCA
+29401
+Preparing Model
+Starting Training
+Getting Predictions
+height
+Calculating Performances
+MSE: 53.78331527563935, R2: 0.3811988464079671
+Gathering Feature Importance
+Label: age
+Data Processing
+Starting PCA
+30379
+Preparing Model
+Starting Training
+Getting Predictions
+age
+Calculating Performances
+MSE: 52.660393599513135, R2: 0.12195238469212277
+Gathering Feature Importance
